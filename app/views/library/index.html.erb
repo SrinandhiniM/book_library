@@ -1,0 +1,12 @@
+
+  <% if @library_books.exists? %>
+    <div class="book-grid">
+      <%= render @library_books, book: @book %>
+    </div>
+  <% else %>
+  <article class="message">
+    <div class="message-body">You haven't added any books to your library yet.</div>
+  </article>
+  <% end %>
+
+</section>

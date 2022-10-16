@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-	before_action :find_book, only: [:show ,:edit , :update , :destroy]
+	before_action :find_book, only: [:show ,:edit , :update , :destroy, :library]
 	def index
         @books=Book.all
 	end
@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 		@book = current_user.books.build(book_params)
 
 		if @book.save
-			redirect_to root_path
+			redirect_to root_path, notice: 'Product was successfully created.'
 		else
 			render 'new' 
 		end
@@ -35,9 +35,22 @@ class BooksController < ApplicationController
 
 	def destroy
 		@book.destroy
-		redirect_to root_path
+		redirect_to root_path, notice: 'Product was successfully deleted.'
 	end
 
+
+	def library
+		type = params[:type]
+	
+		if type == "add"
+		  current_user.library_additions << @book
+			
+		elsif type == "remove"
+		  current_user.library_additions.delete(@book)
+		   
+		end
+	
+	  end
 	private
 
 		def book_params

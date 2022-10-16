@@ -147,12 +147,20 @@
   
   /* Book styles */
   
-  .book {
-    height: 350px;
-    width: 250px;
-    margin-bottom: 40px;
-    @include background-tile;
-  }
+    .book {
+      height: 350px;
+      width: 250px;
+      margin-bottom: 40px;
+      @include background-tile;
+    }
+
+    .book-cart{
+      height: 350px;
+      width: 250px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      @include background-tile;
+    }
   
   .book-show {
     height: 475px;
