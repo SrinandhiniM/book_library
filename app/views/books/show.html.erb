@@ -29,9 +29,9 @@
   <% end %>
          <div class="btn btn-custom">
           <% if user_added_to_library?(current_user, @book) %>
-            <%= link_to 'Remove from library', add_book_path(@book, type: "remove"), method: :put %>
+            <%= link_to 'Remove from Cart', add_book_path(@book, type: "remove"), method: :put %>
           <% else %>
-            <%= link_to 'Add to library', add_book_path(@book, type: "add"), method: :put%>
+            <%= link_to 'Add to Cart', add_book_path(@book, type: "add"), method: :put%>
         <% end %>
      
       </div>
