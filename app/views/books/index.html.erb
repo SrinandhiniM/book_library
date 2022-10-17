@@ -5,7 +5,7 @@
 		<% @books.each do |book| %>
              <div class="col-md-3">
 				<a href="/books/<%= book.id %>">
-					<%= image_tag book.image, class: "book" if book.image.attached? %>
+					<%= image_tag book.image, class: "book"  %>
 				</a>
 			</div>	
 

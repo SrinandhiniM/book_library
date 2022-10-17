@@ -1,8 +1,9 @@
 <%= simple_form_for @book do |f| %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image , value:"Enter the Header Image for the Product"%>
+	<%= f.file_field :uploads %>
 	<%= f.input :title, label: "Product Title" %>
 	<%= f.input :description %>
 	<%= f.input :author , label: "Product Owner" %>
 	<%= f.input :price%>
-	<%= f.button :submit,:class=>"btn-custom2" %>
+	<%= f.button :submit , label: "Create Product",value: "Create Product" ,:class=>"btn-custom2" %>
 <% end %>
