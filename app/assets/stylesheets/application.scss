@@ -148,10 +148,18 @@
   /* Book styles */
   
     .book {
-      height: 350px;
+      height: 310px;
       width: 250px;
-      margin-bottom: 40px;
+      margin-bottom: 5px;
       @include background-tile;
+    }
+
+    .book-title-show {
+      font-display: 2em;
+      font-size: 1em;
+      align-self: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
 
     .book-cart{
@@ -171,11 +179,7 @@
   .book-info {
     @include background-tile;
   
-    .book-title {
-      margin-top: 0;
-      font-size: 2em;
-    }
-  
+    
     .book-author {
       font-size: 1.5em;
       margin-top: 10px;

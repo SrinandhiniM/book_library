@@ -5,12 +5,14 @@
 		<% @books.each do |book| %>
              <div class="col-md-3">
 				<a href="/books/<%= book.id %>">
-					<%= image_tag book.image, class: "book"  %>
+					<%= image_tag book.image, class: "book" %>
+					
 				</a>
+				 <h6 class="book-title-show"><%= book.title%> From <%= book.author%><p></p><a href="#">Rs.<%= book.price %></a></h6>
 			</div>	
 
 		<% end %>
-
+		
 	</div>
 	
  
