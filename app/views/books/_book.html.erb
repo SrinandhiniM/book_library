@@ -3,18 +3,22 @@
 	<div class="col-md-4">
 
 		<%= image_tag book.image , class: "book-cart"  %>
-
-	
-
-    <div class="content">
+      
+       <div class="content">
          <div class="col-md-3">
-         <div class="btn btn-custom">
-         <% if user_added_to_library?(current_user, book) %>
-            <%= link_to 'Remove from Cart', add_book_path(book, type: "remove"), method: :put, class: "button is-danger is-fullwidth" %>
+         
+               <%if params[:controller].eql?('payments') %>
+             <%= link_to "DOWNLOAD",rails_blob_path(book.uploads,disposition: "attachment"),class: "btn-custom" %>
+
+            <% end%>
+            
+         <% if user_added_to_library?(current_user, book)  %>
+     
+            <%= link_to 'Remove from Cart', add_book_path(book, type: "remove") ,method: :put,remote:true, class: "btn btn-custom" if params[:controller].eql?('library') %>
          <% else %>
-            <%= link_to 'Add to Cart', add_book_path(book, type: "add"), method: :put, class: "button is-link is-fullwidth" %>
+            <%= link_to 'Add to Cart', add_book_path(book, type: "add"), method: :put, class: "button is-link is-fullwidth" if params[:controller].eql?('library') %>
           <% end %>
-          </div>
+          
          </div> 
      </div>
       </div>

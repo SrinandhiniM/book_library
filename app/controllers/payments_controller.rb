@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
     end
 
     def show
-        @payments =current_user.library_additions
+        @payments =current_user.library_additions.order("created_at desc")
     end
 
 end
