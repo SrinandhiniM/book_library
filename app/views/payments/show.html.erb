@@ -1,0 +1,12 @@
+<h1>Payment Successful!</h1>
+<% if @payments.exists? %>
+    <div class="book-grid">
+      <%= render @payments, book: @book%>
+    </div>
+  <% else %>
+  <article class="message">
+    <div class="message-body">You haven't added any books to your Cart yet.</div>
+  </article>
+  <% end %>
+
+</section>
